@@ -64,4 +64,4 @@ console.log(family.toString());
 // └─Bob Doe
 ```
 
-<sup>[Source](https://github.com/gwenphalan/data-structures/blob/71e601f74df2c098930cb82f70b92b580d784ad3/src/DataStructures/Tree.ts)</sup>
+<sup>[Source](hhttps://github.com/gwenphalan/data-structures/blob/main/src/example.ts)</sup>
