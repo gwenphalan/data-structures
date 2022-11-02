@@ -17,13 +17,14 @@
 export class Tree<T> {
     value: T;
     children: (Tree<T> | null)[];
+    parent?: Tree<T>;
 
     /**
      *
      * @param value The value of the tree.
      * @param children Any children of the tree.
      */
-    constructor(value: T, children: Tree<T>[] = []) {
+    constructor(value: T, children: Tree<T>[] = [], parent?: Tree<T>) {
         if (value === undefined) throw new Error('The value of a tree cannot be undefined.');
         this.value = value;
         this.children = children;
@@ -34,7 +35,7 @@ export class Tree<T> {
      * @param {T} value
      */
     add(value: T): void {
-        this.children.push(new Tree(value));
+        this.children.push(new Tree(value, [], this));
     }
 
     /**

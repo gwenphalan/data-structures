@@ -30,6 +30,7 @@ export class BinaryTree<T> extends Tree<T> {
     }
 
     set left(value: BinaryTree<T> | null) {
+        if (value) value.parent = this;
         this.children[0] = value;
     }
 
@@ -38,6 +39,7 @@ export class BinaryTree<T> extends Tree<T> {
     }
 
     set right(value: BinaryTree<T> | null) {
+        if (value) value.parent = this;
         this.children[1] = value;
     }
 
@@ -71,6 +73,16 @@ export class BinaryTree<T> extends Tree<T> {
                 this.right.insert(value);
             }
         }
+    }
+
+    leftMost(): BinaryTree<T> {
+        if (this.left === null) return this;
+        return this.left.leftMost();
+    }
+
+    rightMost(): BinaryTree<T> {
+        if (this.right === null) return this;
+        return this.right.rightMost();
     }
 
     /**
