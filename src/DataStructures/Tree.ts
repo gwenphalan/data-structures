@@ -82,7 +82,6 @@ export class Tree<T> {
      * tree.add(3);
      * tree.add(7);
      * tree.add(2);
-     * tree.add(4);
      * tree.children[0].add(1);
      * tree.children[0].add(6);
      * tree.children[1].add(8);
